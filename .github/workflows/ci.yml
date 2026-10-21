@@ -16,13 +16,11 @@ jobs:
 
       # Structural validation of dict/ru/*.json against upstream/corpus.json:
       # prints a per-namespace coverage table and fails on unknown
-      # namespace/key, placeholder mismatch, or invalid values.
+      # namespace/key, placeholder mismatch, or invalid values. Strict mode
+      # additionally fails when any upstream key is missing from dict/ru —
+      # coverage is 100% as of the v0.2.1-rc.2 corpus, so strict is on.
       - name: Validate dictionaries
-        run: node scripts/check.mjs
-
-      # Strict mode additionally fails when any upstream key is missing from
-      # dict/ru. Enable once coverage reaches 100%:
-      # - run: node scripts/check.mjs --strict
+        run: node scripts/check.mjs --strict
 
       # NOTE: refreshing upstream/corpus.json is intentionally NOT part of CI.
       # `node scripts/extract.mjs` requires a local clone of

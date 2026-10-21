@@ -8,6 +8,7 @@
   "commandInput.aria": "Поле ввода команды",
   "objective.aria": "Текст цели",
   "phase.active": "Активная цель",
+  "phase.active.disarmed": "Неактивная цель",
   "phase.blocked": "Заблокированная цель",
   "phase.paused": "Приостановленная цель"
 }

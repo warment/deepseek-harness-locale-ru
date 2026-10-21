@@ -6,5 +6,7 @@
   "dialog.preparingTitle": "Экспорт сессии",
   "dialog.successDescription": "Браузер скачивает ZIP-архив сессии.",
   "dialog.successTitle": "Загрузка сессии началась",
-  "header.action": "Журнал сессии"
+  "header.more": "Другие действия",
+  "menu.download": "Скачать журнал сессии",
+  "menu.feedback": "Обратная связь"
 }

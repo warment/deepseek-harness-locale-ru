@@ -6,6 +6,9 @@
   "confirm.title": "Включить полный доступ?",
   "description": "Выберите режим разрешений по умолчанию для новых сессий",
   "loading": "Загрузка",
+  "preset.fullAccess": "Полный доступ",
+  "preset.readOnly": "Только чтение",
+  "preset.workspaceWrite": "Запись в рабочей папке",
   "title": "Разрешения",
   "unavailable": "Недоступно"
 }

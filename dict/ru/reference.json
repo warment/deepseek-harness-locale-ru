@@ -1,8 +1,13 @@
 {
   "candidate.noCwd": "(нет рабочей папки)",
   "crumb.root": "Рабочая папка",
+  "fileOpen.close": "Закрыть",
+  "fileOpen.failed": "Не удалось открыть «{path}». Повторите попытку или закройте это сообщение.",
+  "fileOpen.retry": "Повторить",
+  "fileOpen.title": "Не удалось открыть файл",
   "section.files": "Файлы и папки",
   "section.sessions": "Сессии",
+  "section.subagents": "Субагенты",
   "time.days": "{n} д",
   "time.hours": "{n} ч",
   "time.minutes": "{n} мин",

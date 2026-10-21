@@ -118,12 +118,16 @@ for (const [ns, dict] of ruDicts) {
       errors.push(`[${ns}] key '${key}' is not present in the upstream corpus (removed or renamed upstream?)`)
       continue
     }
-    if (typeof value !== 'string' || value.length === 0) {
+    const en = typeof entry.en === 'string' ? entry.en : ''
+    // An empty ru value is a structural violation only when there is something
+    // to translate: a few upstream keys carry an empty English source (for
+    // example `message.stepProcess.sharedPrefix`, where English has no shared
+    // prefix), and the empty translation is the correct answer for them.
+    if (typeof value !== 'string' || (value.length === 0 && en.length > 0)) {
       errors.push(`[${ns}] '${key}': ru value must be a non-empty string (got ${value === '' ? "''" : typeof value})`)
       continue
     }
     translated++
-    const en = typeof entry.en === 'string' ? entry.en : ''
     const enTokens = new Set(en.match(PLACEHOLDER_RE) ?? [])
     const ruTokens = new Set(value.match(PLACEHOLDER_RE) ?? [])
     const missingInRu = [...enTokens].filter(t => !ruTokens.has(t))
@@ -134,7 +138,7 @@ for (const [ns, dict] of ruDicts) {
     if (extraInRu.length > 0) {
       errors.push(`[${ns}] '${key}': placeholder(s) present in ru but not in en: ${extraInRu.join(', ')}`)
     }
-    if (missingInRu.length === 0 && extraInRu.length === 0 && value === en) {
+    if (missingInRu.length === 0 && extraInRu.length === 0 && value === en && en !== '') {
       warnings.push(`[${ns}] '${key}': ru value is identical to en (probably untranslated)`)
     }
   }

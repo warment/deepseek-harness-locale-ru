@@ -15,7 +15,7 @@ DeepSeek Harness находится в стадии _developer preview_ и бы�
 ## Совместимость
 
 - Пакет — **внешний locale-плагин**, а не встроенный язык ядра: он регистрирует язык и словари через публичный API, не требуя изменений upstream. Гарантии у этих двух путей разные: встроенный язык проходит полный релизный цикл ядра, внешний плагин проверяется против конкретной ревизии.
-- Протестировано против upstream-ревизии `cd5ef81` (v0.1.2-alpha.1). После обновления dsh повторно выполните `node scripts/check.mjs --strict` (клонировав репозиторий Harness) — см. [docs/upstream-sync.md](docs/upstream-sync.md).
+- Протестировано против upstream-ревизии `687f282e` (v0.2.1-rc.2); перевод покрывает 100% ключей корпуса (65 namespace, 2910 строк), `node scripts/check.mjs --strict` проходит. После обновления dsh повторно выполните `node scripts/check.mjs --strict` (клонировав репозиторий Harness) — см. [docs/upstream-sync.md](docs/upstream-sync.md).
 - Откат — одна команда: `dsh plugin --profile web remove deepseek-harness-locale-ru` и перезапуск `dsh web`.
 
 ## Установка
